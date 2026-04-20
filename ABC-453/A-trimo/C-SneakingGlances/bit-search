@@ -1,0 +1,9 @@
+N = int(input())
+step = list(map(int, input().split()))
+for i in range(1 << N): # iはパターン番号
+  for j in range(N): # jは位の移動数
+    if (i >> j) & 1:# 右端が1だったら1(True) 論理積: 1*1=1
+      print("正", end=" ")
+    else: #右端が0だったら0(False) 論理積:0*1=0
+      print("負", end=" ")
+print()
